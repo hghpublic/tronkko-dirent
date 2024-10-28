@@ -27,6 +27,10 @@ if(WIN32)
     install(FILES include/dirent.h DESTINATION include)
 endif(WIN32)
 
+if(WIN32)
+    add_library(dirent INTERFACE ${CMAKE_SOURCE_DIR}/include)
+endif(WIN32)
+
 # Add distclean target
 add_custom_target(distclean
     COMMAND ${CMAKE_BUILD_TOOL} clean
