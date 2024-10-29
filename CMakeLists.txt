@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.5)
 project(dirent LANGUAGES C CXX)
 
 # User options
-option(DIRENT_BUILD_TESTS "Build bundled tests" ON)
+if(PROJECT_IS_TOP_LEVEL)
+  option(DIRENT_BUILD_TESTS "Build bundled tests" ON)
+endif()
 message(STATUS "Build test and example programs: ${DIRENT_BUILD_TESTS}")
 
 # Initialize C and C++ compilers
