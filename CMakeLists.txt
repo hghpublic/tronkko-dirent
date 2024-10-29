@@ -28,8 +28,8 @@ if(WIN32)
 endif(WIN32)
 
 if(WIN32)
-    add_library(dirent INTERFACE ${CMAKE_SOURCE_DIR}/include)
-    set(DIRENT_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
+    # add_library(dirent INTERFACE ${CMAKE_CURRENT_LIST_DIR}/include)
+    set(DIRENT_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include)
 endif(WIN32)
 
 # Add distclean target
