@@ -28,7 +28,12 @@ if(WIN32)
 endif(WIN32)
 
 if(WIN32)
-    # add_library(dirent INTERFACE ${CMAKE_CURRENT_LIST_DIR}/include)
+    set(target dirent)
+    add_library(${target} INTERFACE)
+    target_include_directories(${target} INTERFACE ${CMAKE_CURRENT_LIST_DIR}/include)
+    set_target_properties(${target} PROPERTIES PUBLIC_HEADER ${CMAKE_CURRENT_LIST_DIR}/include/dirent.h)
+    set_target_properties(${target} PROPERTIES INCLUDE_DIRECTORIES ${CMAKE_CURRENT_LIST_DIR}/include)
+    set_target_properties(${target} PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_LIST_DIR}/include)
     set(DIRENT_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include)
 endif(WIN32)
 
